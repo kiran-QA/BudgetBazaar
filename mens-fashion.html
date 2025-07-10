@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men's Fashion - Discount Deals</title>
+    <link rel="stylesheet" href="frontend.css"> <!-- Assuming frontend.css is similar to styles.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <!-- Logo -->
+            <div>
+                <a href="frontend.html">
+                    <img src="images/Logo.png" alt="Logo" class="Mainlogo" loading="lazy">
+                </a>
+            </div>
+
+            <!-- Navigation -->
+            <nav>
+                <div class="menu-toggle" aria-label="Toggle Menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="frontend.html">Home</a></li>
+                    <li><a href="mens-fashion.html">Men's</a></li>
+                    <li><a href="womens-fashion.html">Women's</a></li>
+                    <li><a href="kids-fashion.html">Kid's</a></li>
+                    <li><a href="home-kitchen.html">Home & Kitchen</a></li>
+                </ul>
+
+                <!-- Search -->
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Search items...">
+                    <button class="search-btn" aria-label="Search"><i class="fas fa-search"></i></button>
+                </div>
+
+                <!-- Login -->
+                <div class="login-dropdown">
+                    <button class="login-btn" aria-label="Login">Login <i class="fas fa-user"></i></button>
+                    <div class="login-menu">
+                        <form id="login-form">
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" id="username" placeholder="Email or Phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" id="password" placeholder="Password" required>
+                            </div>
+                            <button type="submit" class="submit-btn">Login</button>
+                            <a href="javascript:void(0)" class="register-link" onclick="toggleRegister(true)">Register</a>
+                            <a href="#forgot-password" class="forgot-password">Forgot Password?</a>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Cart -->
+            <div class="cart">
+                <a href="#cart" aria-label="Cart"><i class="fas fa-shopping-cart"></i> Cart</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Register Form Modal -->
+    <div id="register-form" class="register-modal">
+        <div class="register-box">
+            <h2>Register</h2>
+            <form>
+                <div class="form-group">
+                    <label for="reg-name">Name</label>
+                    <input type="text" id="reg-name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-email">Email</label>
+                    <input type="email" id="reg-email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-pass">Password</label>
+                    <input type="password" id="reg-pass" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-confirm">Confirm Password</label>
+                    <input type="password" id="reg-confirm" placeholder="Confirm Password" required>
+                </div>
+                <div class="form-group show-pass">
+                    <label><input type="radio" name="show-password" onclick="togglePassword()"> Show Password</label>
+                </div>
+                <button type="submit" class="submit-btn">Register</button>
+                <button type="button" onclick="toggleRegister(false)" class="close-btn">Close</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Hero Section with Slider -->
+    <div class="Bannergap"></div>
+    <section class="hero">
+        <div class="slider">
+            <div class="slide active">
+                <img src="images/ManFashnB1.png" alt="Men's Fashion Offer 1" loading="lazy">
+            </div>
+            <div class="slide">
+                <img src="images/Men's fashionbanner2.png" alt="Men's Fashion Offer 2" loading="lazy">
+            </div>
+            <div class="slide">
+                <img src="images/Men'sfashionbanner3.png" alt="Men's Fashion Offer 3" loading="lazy">
+            </div>
+            <button class="prev" aria-label="Previous Slide">❮</button>
+            <button class="next" aria-label="Next Slide">❯</button>
+        </div>
+    </section>
+
+    <!-- Subcategory Icons Section -->
+    <section class="subcategories">
+        <h2>Explore Men's Fashion</h2>
+        <div class="subcategory-grid">
+            <div class="subcategory-item">
+                <i class="fas fa-shirt"></i>
+                <p>Shirts</p>
+            </div>
+            <div class="subcategory-item">
+                <i class="fas fa-trousers"></i>
+                <p>Pants</p>
+            </div>
+            <div class="subcategory-item">
+                <i class="fas fa-tshirt"></i>
+                <p>Shorts</p>
+            </div>
+            <div class="subcategory-item">
+                <i class="fas fa-socks"></i>
+                <p>Inners</p>
+            </div>
+            <div class="subcategory-item">
+                <i class="fas fa-shoe-prints"></i>
+                <p>Footwear</p>
+            </div>
+            <div class="subcategory-item">
+                <i class="fas fa-hat-cowboy"></i>
+                <p>Accessories</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Men's Fashion Products Section -->
+    <section class="products">
+        <h2>Men's Fashion</h2>
+        <div class="product-grid">
+            <div class="product-card" data-category="Men's Fashions">
+                <div class="product-image">
+                    <img src="images/Men's Shirts.jpg" alt="Men's Shirt" loading="lazy">
+                </div>
+                <div class="product-details">
+                    <h3>Men's Shirt</h3>
+                    <p class="category">Men's Fashion</p>
+                    <p class="price">₹899 <span class="original-price">₹1999</span></p>
+                    <p class="discount">55% Off</p>
+                    <button class="add-to-cart" data-product="Men's Shirt" data-price="899" data-image="images/Men's Shirts.jpg">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card" data-category="Men's Fashions">
+                <div class="product-image">
+                    <img src="images/Men Pant.jpg" alt="Men's Jeans" loading="lazy">
+                </div>
+                <div class="product-details">
+                    <h3>Men's Jeans</h3>
+                    <p class="category">Men's Fashion</p>
+                    <p class="price">₹599 <span class="original-price">₹1299</span></p>
+                    <p class="discount">54% Off</p>
+                    <button class="add-to-cart" data-product="Men's Jeans" data-price="599" data-image="images/Men Pant.jpg">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card" data-category="Men's Fashions">
+                <div class="product-image">
+                    <img src="images/Men's T-Shirt.jpg" alt="Men's T-Shirt" loading="lazy">
+                </div>
+                <div class="product-details">
+                    <h3>Men's T-Shirt</h3>
+                    <p class="category">Men's Fashion</p>
+                    <p class="price">₹399 <span class="original-price">₹999</span></p>
+                    <p class="discount">60% Off</p>
+                    <button class="add-to-cart" data-product="Men's T-Shirt" data-price="399" data-image="images/Men's T-Shirt.jpg">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card" data-category="Men's Fashions">
+                <div class="product-image">
+                    <img src="images/Men's Short.jpg" alt="Men's Short" loading="lazy">
+                </div>
+                <div class="product-details">
+                    <h3>Men's Short</h3>
+                    <p class="category">Men's Fashion</p>
+                    <p class="price">₹799 <span class="original-price">₹1799</span></p>
+                    <p class="discount">56% Off</p>
+                    <button class="add-to-cart" data-product="Men's Short" data-price="799" data-image="images/Men's Short.jpg">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card" data-category="Men's Fashions">
+                <div class="product-image">
+                    <img src="images/Men's Inners.jpg" alt="Men's Inners" loading="lazy">
+                </div>
+                <div class="product-details">
+                    <h3>Men's Inners</h3>
+                    <p class="category">Men's Fashion</p>
+                    <p class="price">₹699 <span class="original-price">₹1499</span></p>
+                    <p class="discount">53% Off</p>
+                    <button class="add-to-cart" data-product="Men's Inners" data-price="699" data-image="images/Men's Inners.jpg">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card" data-category="Men's Fashions">
+                <div class="product-image">
+                    <img src="images/Men's Shoes.jpeg" alt="Men's Shoes" loading="lazy">
+                </div>
+                <div class="product-details">
+                    <h3>Men's Shoes</h3>
+                    <p class="category">Men's Fashion</p>
+                    <p class="price">₹499 <span class="original-price">₹999</span></p>
+                    <p class="discount">50% Off</p>
+                    <button class="add-to-cart" data-product="Men's Shoes" data-price="499" data-image="images/Men's Shoes.jpeg">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: support@BudgetBazaar.com</p>
+                    <p>Phone: +91 9876543210</p>
+                    <p>Location: Hyderabad, Telangana, India</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <p class="footer-bottom">© 2025 Budget Bazaar Deals. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Added to Cart</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="cart-item">
+                        <img id="modal-image" src="" alt="Product Image" style="width: 100px; height: auto;">
+                        <div>
+                            <h6 id="modal-product"></h6>
+                            <p id="modal-price"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continue Shopping</button>
+                    <a href="#cart" class="btn btn-primary">View Cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Slider Functionality
+            let slideIndex = 0;
+            const slides = document.querySelectorAll('.slide');
+            const prev = document.querySelector('.prev');
+            const next = document.querySelector('.next');
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.remove('active');
+                    if (i === index) slide.classList.add('active');
+                });
+            }
+
+            if (prev && next) {
+                prev.addEventListener('click', () => {
+                    slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+                    showSlide(slideIndex);
+                });
+
+                next.addEventListener('click', () => {
+                    slideIndex = (slideIndex + 1) % slides.length;
+                    showSlide(slideIndex);
+                });
+
+                setInterval(() => {
+                    slideIndex = (slideIndex + 1) % slides.length;
+                    showSlide(slideIndex);
+                }, 5000);
+            }
+
+            // Mobile Menu Toggle
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                });
+            }
+
+            // Search Functionality
+            const searchInput = document.getElementById('search-input');
+            if (searchInput) {
+                searchInput.addEventListener('input', () => {
+                    const searchTerm = searchInput.value.toLowerCase();
+                    const productCards = document.querySelectorAll('.product-card');
+                    productCards.forEach(card => {
+                        const category = card.getAttribute('data-category').toLowerCase();
+                        if (searchTerm === '' || category.includes(searchTerm)) {
+                            card.style.display = 'flex';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            }
+
+            // Login Dropdown
+            const loginBtn = document.querySelector('.login-btn');
+            const loginMenu = document.querySelector('.login-menu');
+            if (loginBtn && loginMenu) {
+                loginBtn.addEventListener('click', () => {
+                    loginMenu.classList.toggle('active');
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (!loginBtn.contains(e.target) && !loginMenu.contains(e.target)) {
+                        loginMenu.classList.remove('active');
+                    }
+                });
+            }
+
+            // Register Modal
+            window.toggleRegister = function(state) {
+                document.getElementById('register-form').style.display = state ? 'flex' : 'none';
+            };
+            window.togglePassword = function() {
+                const passInputs = ['reg-pass', 'reg-confirm'].map(id => document.getElementById(id));
+                passInputs.forEach(input => {
+                    input.type = input.type === 'password' ? 'text' : 'password';
+                });
+            };
+
+            // Cart Modal Functionality
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const product = button.getAttribute('data-product');
+                    const price = button.getAttribute('data-price');
+                    const image = button.getAttribute('data-image');
+
+                    if (product && price && image) {
+                        document.getElementById('modal-product').textContent = product;
+                        document.getElementById('modal-price').textContent = `₹${price}`;
+                        document.getElementById('modal-image').src = image;
+
+                        const modal = new bootstrap.Modal(document.getElementById('cartModal'));
+                        modal.show();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
